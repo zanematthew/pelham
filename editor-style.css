@@ -1,0 +1,55 @@
+/**
+ * This CSS file is auto-loaded from WordPress since out theme supports
+ * editor style using add_editor_style().
+ *
+ * This file imports the theme style sheet, allowing the:; p, address, pre,
+ * and h1 - h6 tags show styled via the TinyMCE drop down. Additional HTML
+ * tags will inherit their global properties from the imported stylesheet.
+ *
+ * The below classes help to make content in TinyMCE look a tad better ;)
+ *
+ * Note custom fonts are not supported!
+ */
+
+@import url('style.css');
+
+body#tinymce.wp-editor {
+    padding: 15px;
+    }
+
+ul li,
+ol li {
+    margin: .5em 0 0;
+    }
+
+img.aligncenter {
+    margin: 0 auto;
+    }
+
+.mceIEcenter {
+    text-align: center;
+    clear: both;
+    float: left;
+    width: 100%;
+    }
+
+.mceIEcenter .wp-caption {
+    float: none;
+    }
+
+img.alignleft {
+    margin: 0 15px 0 0;
+    }
+
+.wp-caption-dt {
+    margin: 0;
+    }
+
+
+dl {
+    font-size: 14px;
+    }
+
+dl dd {
+    font: normal 14px/1.8em "Merriweather", Georgia;
+    }

@@ -1,0 +1,50 @@
+@media screen and (max-width: 782px) {
+
+    #masthead .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+        z-index: 999;
+        }
+
+    #masthead .main-navigation li {
+        float: left;
+        width: 100%;
+        position: inherit;
+        }
+
+    #masthead .main-navigation ul ul li a {
+        padding-left: 60px;
+        }
+
+    #masthead .main-navigation ul ul ul li a {
+        padding-left: 6em;
+        }
+
+    #masthead .main-navigation .sub-menu li {
+        width: 100%;
+        }
+
+    #masthead .main-navigation .screen-reader-text,
+    #masthead .main-navigation ul {
+        display: none;
+        }
+
+    #masthead .toggled ul {
+        display: block;
+        }
+
+    #masthead .main-navigation li {
+        text-align: left;
+        }
+
+    #masthead .main-navigation ul li {
+        margin: 0;
+        }
+
+    #masthead .main-navigation .children {
+        display: none;
+        }
+}
