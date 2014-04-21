@@ -129,9 +129,16 @@ jQuery( document ).ready(function( $ ){
     /**
      * When users click on the down arrow below a post toggle the post meta area
      */
-    $('#expand-footer-handle').on('click',function(e){
-        $('#expand-footer-target').toggle();
+    $('.expand-footer-handle').toggle(function(e){
+        $( 'span', this ).removeClass('genericon-expand');
+        $( 'span', this ).addClass('genericon-collapse');
+        $('.expand-footer-target').toggle();
+    }, function(){
+        $( 'span', this ).addClass('genericon-expand');
+        $( 'span', this ).removeClass('genericon-collapse');
+        $('.expand-footer-target').toggle();
     });
+
 
     $('#search_toggle_handle').on('click', function( e ){
         e.preventDefault();

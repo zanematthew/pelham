@@ -418,17 +418,17 @@ main.grid-parent {
 
 /* =Expanded Footer
 -------------------------------------------------------------- */
-#expand-footer-target .entry-meta {
+.expand-footer-target .entry-meta {
     clear: both;
     text-align: center;
     width: 100%;
     }
 
-#expand-footer-target .entry-meta li {
+.expand-footer-target .entry-meta li {
     display: block;
     }
 
-#expand-footer-handle {
+.expand-footer-handle {
     text-align: center;
     margin: 10px 0 10px 0;
     float: left;

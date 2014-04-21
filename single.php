@@ -5,8 +5,8 @@
             <?php get_template_part( 'partials/content', get_post_format() ); ?>
             <footer class="entry-footer">
                 <?php get_template_part( 'partials/entry-navigation' ); ?>
-                <a href="#expand-<?php echo get_the_ID(); ?>" id="expand-footer-handle"><span class="genericon genericon-expand"></span></a>
-                <div id="expand-footer-target" style="display: none;">
+                <a href="#expand-<?php echo get_the_ID(); ?>" class="expand-footer-handle"><span class="genericon genericon-expand"></span></a>
+                <div class="expand-footer-target" style="display: none;">
                     <?php get_template_part( 'partials/entry-meta' ); ?>
                 </div>
             </footer>
