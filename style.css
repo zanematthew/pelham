@@ -306,7 +306,7 @@ sub {
 
 html {
     overflow-y: scroll;  /*Keeps page centered in all browsers regardless of content height */
-
+    background-color: #fff;
     }
 
 textarea,
