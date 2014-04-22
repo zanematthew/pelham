@@ -69,6 +69,24 @@ function pelham_custom_control_classess(){
                 $this->print_tab_image( esc_url_raw( $my_context_upload->guid ) );
             }
         }
+
+
+        /**
+         * Verify that the given URL exists in the media library
+         * @param string $value The guid
+         */
+        public function attachment_guid_to_id( $value ) {
+
+            if ( is_numeric( $value ) || empty( $value ) )
+                return $value;
+
+            $matches = get_posts( array( 'post_type' => 'attachment', 'guid' => $value ) );
+
+            if ( empty( $matches ) )
+                return false;
+
+            return $matches[0]->guid; // this is the match we want
+        }
     }
 
 
@@ -145,6 +163,7 @@ Class Pelham_Customizer {
                 'default' => '#9e9e9e',
                 'transport' => 'refresh', // Hover states do not work well with postMessage, so using refresh
                 'type' => 'color',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'control' => array(
                     'label' => __( 'Link Color', 'pelham' ),
                     'section' => 'colors'
@@ -154,6 +173,7 @@ Class Pelham_Customizer {
                 'id' => 'link_hover_color',
                 'default' => '#000000',
                 'transport' => 'refresh', // Hover states do not work well with postMessage, so using refresh
+                'sanitize_callback' => 'sanitize_hex_color',
                 'type' => 'color',
                 'control' => array(
                         'label' => __( 'Link Hover Color', 'pelham' ),
@@ -164,6 +184,7 @@ Class Pelham_Customizer {
                 'id' => 'custom_text_color',
                 'default' => '#000000',
                 'transport' => 'refresh', // Hover states do not work well with postMessage, so using refresh
+                'sanitize_callback' => 'sanitize_hex_color',
                 'type' => 'color',
                 'control' => array(
                         'label' => __( 'Text Color', 'pelham' ),
@@ -175,6 +196,7 @@ Class Pelham_Customizer {
             array(
                 'id' => 'title_background_color',
                 'default' => '#000000',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'type' => 'color',
                 'control' => array(
                         'label' => __( 'Title Background', 'pelham' ),
@@ -184,6 +206,7 @@ Class Pelham_Customizer {
             array(
                 'id' => 'title_text_color',
                 'default' => '#ffffff',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'type' => 'color',
                 'control' => array(
                         'label' => __( 'Title Color', 'pelham' ),
@@ -193,6 +216,7 @@ Class Pelham_Customizer {
             array(
                 'id' => 'title_logo',
                 'type' => 'image',
+                'sanitize_callback' => array('Pelham_Customize_Image_Reloaded_Control','attachment_guid_to_id'),
                 'control' => array(
                         'label' => __('Logo (replaces title)', 'pelham'),
                         'section' => 'title_tagline',
@@ -203,6 +227,7 @@ Class Pelham_Customizer {
                 'id' => 'custom_css',
                 'settings' => 'pelham_custom_settings[custom_css]',
                 'type' => 'textarea',
+                'sanitize_callback' => 'sanitize_text_field',
                 'control' => array(
                         'label' => __( 'Custom CSS', 'pelham' ),
                         'section' => 'pelham_custom_settings'
@@ -212,6 +237,7 @@ Class Pelham_Customizer {
                 'id' => 'single_page_width',
                 'settings' => 'pelham_custom_settings[single_page_width]',
                 'type' => 'number',
+                'sanitize_callback' => 'absint',
                 'default' => '760',
                 'control' => array(
                     'label' => __( 'Set the width for single pages', 'pelham' ),
@@ -254,10 +280,10 @@ Class Pelham_Customizer {
                 $section_id = $setting['control']['section'];
             }
 
-
             $wp_customize->add_setting( $setting_id, array(
                 'default'   => empty( $setting['default'] ) ? null : $setting['default'],
                 'transport' => empty( $setting['transport'] ) ? null : $setting['transport'],
+                'sanitize_callback' => empty( $setting['sanitize_callback'] ) ? null : $setting['sanitize_callback']
             ) );
 
             // Handle controls here
@@ -439,3 +465,4 @@ Class Pelham_Customizer {
 }
 add_action( 'customize_register', array( 'Pelham_Customizer', 'register' ) );
 add_action( 'wp_head', array( 'Pelham_Customizer', 'header_output' ) );
+
