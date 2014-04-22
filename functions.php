@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Set our content width, used for media assets and others items
- */
-if ( ! isset( $content_width ) )
-    $content_width = 512; /* pixels */
-
 
 /**
  * Add various features during theme set-up, note this runs
@@ -14,6 +8,13 @@ if ( ! isset( $content_width ) )
  * @package pehlam
  */
 function pelham_setup(){
+
+    /**
+     * Set our content width, used for media assets and others items
+     */
+    if ( ! isset( $content_width ) )
+        $content_width = 512; /* pixels */
+
     add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-formats', apply_filters( 'pelham_post_formart_args', array(
         'aside',
