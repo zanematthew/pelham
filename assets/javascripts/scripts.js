@@ -81,8 +81,6 @@ jQuery( document ).ready(function( $ ){
         $('.gallery-item').removeClass('hover');
         $(this).toggleClass('hover');
 
-        $('.gallery-caption', this).show();
-
         // Lets wrap the gallery caption in a link, since when
         // we are displaying it the users have no way to link to
         // the larger image.
@@ -90,8 +88,6 @@ jQuery( document ).ready(function( $ ){
         if ( $('.gallery-caption .link-helper', this).length == 0 ){
             $('.gallery-caption', this).wrapInner('<a href="'+link+'" class="link-helper" />')
         }
-    }, function() {
-        $('.gallery-caption', this).hide();
     });
 
 

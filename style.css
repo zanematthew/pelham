@@ -1631,6 +1631,14 @@ footer .nav-menu a {
     opacity: 1;
     }
 
+.gallery .gallery-item.hover .gallery-caption {
+    display: block;
+    }
+
+.gallery .gallery-item .gallery-caption {
+    display: none;
+    }
+
 .gallery-item img {
     border-radius: 0;
     }
