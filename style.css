@@ -1620,6 +1620,15 @@ footer .nav-menu a {
     margin: 0 1px 1px 0;
     position: relative;
     max-width: 150px;
+    opacity: .30;
+    -webkit-transition: all 0.4s linear;
+     -moz-transition: all 0.4s linear;
+       -o-transition: all 0.4s linear;
+          transition: all 0.4s linear;
+    }
+
+.gallery .gallery-item.hover {
+    opacity: 1;
     }
 
 .gallery-item img {

@@ -78,10 +78,8 @@ jQuery( document ).ready(function( $ ){
      * an item in the gallery
      */
     $('.gallery-item').hover(function() {
+        $('.gallery-item').removeClass('hover');
         $(this).toggleClass('hover');
-        $('.gallery-item').not(this).stop().animate({
-            "opacity": .3
-        }), 200;
 
         $('.gallery-caption', this).show();
 
@@ -93,9 +91,6 @@ jQuery( document ).ready(function( $ ){
             $('.gallery-caption', this).wrapInner('<a href="'+link+'" class="link-helper" />')
         }
     }, function() {
-        $('.gallery-item').stop().animate({
-            "opacity": 1
-        }), 200;
         $('.gallery-caption', this).hide();
     });
 
