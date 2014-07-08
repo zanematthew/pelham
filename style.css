@@ -1701,6 +1701,7 @@ each row*/
 
 .gallery .gallery-item .gallery-icon {
     margin: 0;
+    max-width: 100%;
     }
 
 .gallery .gallery-item .gallery-caption {
