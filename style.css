@@ -1427,6 +1427,11 @@ for genericons*/
     box-shadow: 0px 5px 5px rgba(221, 221, 221, 0.33);
     }
 
+/* When the drop down is the last link in the page we move the menu so the items are not outside of the window pane */
+#masthead .site-secondary-navigation ul li:last-child > ul {
+    left: -70px;
+    }
+
 #masthead .site-secondary-navigation ul ul li {
     display: block;
     }
