@@ -20,7 +20,7 @@
 
     <?php if ( has_nav_menu( 'header_secondary' )) : ?>
         <div class="site-secondary-navigation">
-            <?php wp_nav_menu( array( 'theme_location' => 'header_secondary', 'fallback_cb' => false, 'depth' => 1 ) ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'header_secondary', 'fallback_cb' => false, 'depth' => 2 ) ); ?>
         </div>
     <?php endif; ?>
 

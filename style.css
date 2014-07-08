@@ -1102,7 +1102,7 @@ a .genericon:hover {
 /* =Menu Primary navigation in the header
 ----------------------------------------------- */
 #masthead ul li {
-    margin: 0 0 0 15px;
+    margin: 0 0 5px 15px;
     display: inline;
     }
 
@@ -1187,18 +1187,7 @@ over any while links */
     display: block;
     }
 
-#masthead .site-secondary-navigation {
-    background: #FFF;
-    border-bottom: 1px solid #ddd;
-    max-height: 38px;
-    height: 38px;
-    opacity: 0.9;
-    font-size: 12px;
-    width: 100%;
-    }
-
-#masthead .primary-header-area,
-#masthead .site-secondary-navigation {
+#masthead .primary-header-area {
     position: fixed;
     z-index: 2;
     }
@@ -1391,6 +1380,67 @@ for genericons*/
     margin: 0 0 0 5px;
     position: relative;
     top: -2px;
+    }
+
+.site-secondary-navigation ul li.menu-item-has-children {
+    position: relative;
+    padding: 10px 0 11px 10px;
+    }
+
+.site-secondary-navigation ul li.menu-item-has-children > a:after,
+.site-secondary-navigation ul li.page_item_has_children > a:after {
+    content: '\f502';
+    display: inline-block;
+    font: normal 8px/1 Genericons;
+    color: #9E9E9E;
+    position: relative;
+    right: -5px;
+    top: 2px;
+    }
+
+.site-secondary-navigation ul li.menu-item-has-children a {
+    padding-right: 10px;
+    }
+
+#masthead .site-secondary-navigation .current-menu-item a,
+#masthead .site-secondary-navigation .current_page_item a {
+    color: #000;
+    }
+
+#masthead .site-secondary-navigation ul ul {
+    display: none;
+    float: left;
+    position: absolute;
+    top: 10px;
+    left: -15px;
+    z-index: 2;
+    min-width: 200px;
+    text-align: left;
+    }
+
+#masthead .site-secondary-navigation ul li:hover > ul {
+    display: block;
+    background: #fff;
+    padding: 0 0 10px 0;
+    min-width: 150px;
+    top: 37px;
+    box-shadow: 0px 5px 5px rgba(221, 221, 221, 0.33);
+    }
+
+#masthead .site-secondary-navigation ul ul li {
+    display: block;
+    }
+
+#masthead .site-secondary-navigation {
+    background: #FFF;
+    border-bottom: 1px solid #ddd;
+    max-height: 38px;
+    height: 38px;
+    opacity: 0.9;
+    font-size: 12px;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
     }
 
 
@@ -2041,8 +2091,8 @@ body.has-header-secondary-menu .primary-header-area {
         top: 0;
         }
 
-    body.has-header-secondary-menu .primary-header-area { 
-        margin-top: 0; 
+    body.has-header-secondary-menu .primary-header-area {
+        margin-top: 0;
         }
 
     body.has-mobile-menu {
