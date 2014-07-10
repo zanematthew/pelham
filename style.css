@@ -1002,6 +1002,9 @@ aside .widget:last-child {
     line-height: 1.6em;
     }
 
+.archive main .taxonomy-description p:last-child {
+    margin: 0;
+    }
 
 /*Video Archive*/
 .term-post-format-image main,
