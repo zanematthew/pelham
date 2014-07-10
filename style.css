@@ -382,6 +382,7 @@ hr {
     border: 0;
     height: 1px;
     background: 1px rgba(0, 0, 0, 0.1);
+    margin: 1.5em 0;
     }
 
 embed,
@@ -609,6 +610,14 @@ main .search-form {
 .hentry .entry-footer {
     margin-top: 20px;
     }
+
+.hentry p + hr {
+    margin-top: 0;
+    }
+
+.hentry hr + h2 { 
+   padding-top: 0; 
+   }
 /* =End hentry
 -------------------------------------------------------------- */
 
