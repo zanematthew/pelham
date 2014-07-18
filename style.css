@@ -382,6 +382,7 @@ hr {
     border: 0;
     height: 1px;
     background: 1px rgba(0, 0, 0, 0.1);
+    clear: both;
     margin: 1.5em 0;
     width: 100%;
     }
@@ -1201,7 +1202,7 @@ over any while links */
     }
 
 #masthead .primary-header-area {
-    position: relative;
+    position: fixed;
     z-index: 2;
     }
 
