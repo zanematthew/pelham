@@ -32,10 +32,13 @@
             <?php endif; ?>
         </div>
 
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-            <h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
-            <?php wp_nav_menu( array( 'theme_location' => 'header_primary' ) ); ?>
-        </nav><!-- #site-navigation -->
+        <?php $primary_menu = wp_nav_menu( array( 'theme_location' => 'header_primary', 'echo' => false ) );
+        if ( ! empty( $primary_menu ) ) : ?>
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
+                <?php echo $primary_menu; ?>
+            </nav><!-- #site-navigation -->
+        <?php endif; ?>
 
         <div class="search-container">
             <span class="genericon genericon-search" id="search_toggle_handle"><a href="#"></a></span>

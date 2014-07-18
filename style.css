@@ -2109,10 +2109,6 @@ body.has-header-secondary-menu .primary-header-area {
         top: 0;
         }
 
-    body.has-header-secondary-menu .primary-header-area {
-        margin-top: 0;
-        }
-
     body.has-mobile-menu {
         left: 175px;
         }
@@ -2192,7 +2188,7 @@ body.has-header-secondary-menu .primary-header-area {
         padding: 0 10px;
         }
 
-    .site-header .site-title {
+    .has-header-primary-menu .site-header .site-title {
         padding-left: 50px;
         }
 

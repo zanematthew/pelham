@@ -41,6 +41,14 @@ function pelham_body_classes( $classes ) {
         $classes[] = 'has-header-secondary-menu';
     }
 
+    if ( has_nav_menu( 'header_primary' ) ){
+        // Check for empty nav menu
+        $nav = wp_nav_menu( array( 'theme_location' => 'header_primary', 'echo' => false ) );
+        if ( ! empty( $nav ) ){
+            $classes[] = 'has-header-primary-menu';
+        }
+    }
+
     if ( is_singular() ){
         $classes[] = 'singular';
     }
