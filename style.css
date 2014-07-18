@@ -1201,7 +1201,7 @@ over any while links */
     }
 
 #masthead .primary-header-area {
-    position: fixed;
+    position: relative;
     z-index: 2;
     }
 
@@ -2109,6 +2109,10 @@ body.has-header-secondary-menu .primary-header-area {
         top: 0;
         }
 
+    body.has-header-secondary-menu .primary-header-area {
+        margin-top: 0;
+        }
+
     body.has-mobile-menu {
         left: 175px;
         }
@@ -2221,18 +2225,17 @@ body.has-header-secondary-menu .primary-header-area {
     .admin-bar.has-header-secondary-menu main {
         padding-top: 145px;
         }
+
+    #masthead .site-secondary-navigation {
+        position: relative;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .entry-meta,
     .site-header .site-description,
-    .attachment .entry-header .prev-next-post,
-    .site-secondary-navigation {
+    .attachment .entry-header .prev-next-post {
         display: none;
-    }
-
-    body.has-header-secondary-menu .primary-header-area {
-        margin-top: 0;
     }
 }
 
