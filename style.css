@@ -2132,6 +2132,10 @@ body.has-header-secondary-menu .primary-header-area {
         overflow-y: scroll;
         }
 
+    #masthead .primary-header-area {
+        position: relative;
+        }
+
     #masthead .primary-header-area .genericon a {
         float: none;
         }
