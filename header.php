@@ -1,53 +1,9 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
+<?php
 
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width">
+get_template_part( 'partials/html', 'header' );
+get_template_part( 'partials/masthead' );
 
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<header id="masthead" class="site-header" role="banner">
-
-    <?php if ( has_nav_menu( 'header_secondary' )) : ?>
-        <div class="site-secondary-navigation">
-            <?php wp_nav_menu( array( 'theme_location' => 'header_secondary', 'fallback_cb' => false, 'depth' => 2 ) ); ?>
-        </div>
-    <?php endif; ?>
-
-    <div class="primary-header-area">
-        <div class="site-branding">
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-            <?php if ( get_bloginfo( 'description' ) ) : ?>
-                <h2 class="site-description"><span class="long-title"><?php bloginfo( 'description' ); ?></span></h2>
-            <?php endif; ?>
-        </div>
-
-        <?php $primary_menu = wp_nav_menu( array( 'theme_location' => 'header_primary', 'echo' => false ) );
-        if ( ! empty( $primary_menu ) ) : ?>
-            <nav id="site-navigation" class="main-navigation" role="navigation">
-                <h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
-                <?php echo $primary_menu; ?>
-            </nav><!-- #site-navigation -->
-        <?php endif; ?>
-
-        <div class="search-container">
-            <span class="genericon genericon-search" id="search_toggle_handle"><a href="#"></a></span>
-            <div id="search_form_target" class="search-form-container" style="display: none;">
-                <?php get_search_form(); ?>
-            </div>
-        </div>
-    </div>
-</header><!-- #masthead -->
+?>
 
 <main class="grid-container grid-parent">
     <?php if ( get_header_image() ) : ?>
