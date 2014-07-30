@@ -41,6 +41,14 @@ function pelham_body_classes( $classes ) {
         $classes[] = 'has-header-secondary-menu';
     }
 
+    if ( has_nav_menu( 'header_primary' ) ){
+        // Check for empty nav menu
+        $nav = wp_nav_menu( array( 'theme_location' => 'header_primary', 'echo' => false ) );
+        if ( ! empty( $nav ) ){
+            $classes[] = 'has-header-primary-menu';
+        }
+    }
+
     if ( is_singular() ){
         $classes[] = 'singular';
     }
@@ -138,4 +146,24 @@ function pelham_attachment_image(){
         the_title_attribute( array( 'echo' => false ) ),
         wp_get_attachment_image( $post->ID, $attachment_size )
     );
+}
+
+
+/**
+ * Gets the id of the topmost ancestor of the current page. Returns the current
+ * page's id if there is no parent.
+ *
+ * @uses object $post
+ * @return int
+ */
+function pelham_get_post_top_ancestor_id(){
+    global $post;
+
+    if ( $post->post_parent ){
+        $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
+        $ancestors[] = $post->ID;
+        return $ancestors;
+    }
+
+    return false;
 }

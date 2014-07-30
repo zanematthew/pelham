@@ -382,7 +382,9 @@ hr {
     border: 0;
     height: 1px;
     background: 1px rgba(0, 0, 0, 0.1);
+    clear: both;
     margin: 1.5em 0;
+    width: 100%;
     }
 
 embed,
@@ -615,8 +617,8 @@ main .search-form {
     margin-top: 0;
     }
 
-.hentry hr + h2 { 
-   padding-top: 0; 
+.hentry hr + h2 {
+   padding-top: 0;
    }
 /* =End hentry
 -------------------------------------------------------------- */
@@ -2050,6 +2052,39 @@ body.has-header-secondary-menu .primary-header-area {
 .bypostauthor {}
 
 
+/* =Breadcrumbs
+-------------------------------------------------------------- */
+.breadcrumbs {
+    margin-bottom: 1em;
+    }
+
+.breadcrumbs .current_page_item a {
+    color: #000;
+    cursor: default;
+    }
+
+.breadcrumbs .children li::before {
+    content: "\00BB";
+    margin: 0 10px;
+    font-size: 15px;
+    }
+
+.breadcrumbs ul {
+    display: inline;
+    margin-left: 20px;
+    }
+
+.breadcrumbs .children {
+    margin: 0;
+    }
+
+.breadcrumbs li {
+    display: inline;
+    }
+/* =
+-------------------------------------------------------------- */
+
+
 /* =Media Queries
 -------------------------------------------------------------- */
 @media screen and (max-width: 782px) {
@@ -2130,6 +2165,10 @@ body.has-header-secondary-menu .primary-header-area {
         overflow-y: scroll;
         }
 
+    #masthead .primary-header-area {
+        position: relative;
+        }
+
     #masthead .primary-header-area .genericon a {
         float: none;
         }
@@ -2191,7 +2230,7 @@ body.has-header-secondary-menu .primary-header-area {
         padding: 0 10px;
         }
 
-    .site-header .site-title {
+    .has-header-primary-menu .site-header .site-title {
         padding-left: 50px;
         }
 
@@ -2224,18 +2263,17 @@ body.has-header-secondary-menu .primary-header-area {
     .admin-bar.has-header-secondary-menu main {
         padding-top: 145px;
         }
+
+    #masthead .site-secondary-navigation {
+        position: relative;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .entry-meta,
     .site-header .site-description,
-    .attachment .entry-header .prev-next-post,
-    .site-secondary-navigation {
+    .attachment .entry-header .prev-next-post {
         display: none;
-    }
-
-    body.has-header-secondary-menu .primary-header-area {
-        margin-top: 0;
     }
 }
 
