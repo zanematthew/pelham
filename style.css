@@ -1603,9 +1603,33 @@ footer .nav-menu a {
     width: 100%;
     }
 
+#masthead .site-secondary-navigation .genericon-external:before {
+    content: '';
+    }
+
+#masthead .site-secondary-navigation .genericon-external:after {
+    content: '\f442';
+    top: 4px;
+    position: relative;
+    }
+
+#site-footer .genericon-external a,
+#masthead .site-secondary-navigation .genericon-external a {
+    font-size: 13px;
+    font-family: "lato", "helvetica Neue";
+    font-weight: normal;
+    -webkit-font-smoothing: auto;
+    }
+
 /* For genericons in the footer menu we hide the text */
-#site-footer .genericon a,
-#masthead .site-secondary-navigation .genericon a {
+#site-footer .genericon-twitter a,
+#masthead .site-secondary-navigation .genericon-twitter a,
+
+#site-footer .genericon-wordpress a,
+#masthead .site-secondary-navigation .genericon-wordpress a,
+
+#site-footer .genericon-github a,
+#masthead .site-secondary-navigation .genericon-github a {
     padding: 0;
     margin: 0 0 0 13px;
     text-transform: none;
