@@ -613,10 +613,6 @@ main .search-form {
     margin-top: 20px;
     }
 
-.hentry p + hr {
-    margin-top: 0;
-    }
-
 .hentry hr + h2 {
    padding-top: 0;
    }
@@ -1437,7 +1433,7 @@ for genericons*/
     background: #fff;
     padding: 0 0 10px 0;
     min-width: 150px;
-    top: 37px;
+    top: 34px;
     box-shadow: 0px 5px 5px rgba(221, 221, 221, 0.33);
     }
 
@@ -1448,6 +1444,7 @@ for genericons*/
 
 #masthead .site-secondary-navigation ul ul li {
     display: block;
+    margin: 10px 20px 10px;
     }
 
 #masthead .site-secondary-navigation {
@@ -2285,7 +2282,7 @@ body.has-header-secondary-menu .primary-header-area {
         }
 
     .admin-bar.has-header-secondary-menu main {
-        padding-top: 145px;
+        padding-top: 160px;
         }
 
     #masthead .site-secondary-navigation {
